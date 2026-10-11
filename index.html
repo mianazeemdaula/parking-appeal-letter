@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking Appeal Letter | Appeal a private parking charge (UK)</title>
+    <meta name="description" content="Write a clear appeal letter for a private parking charge in the UK. Free, runs in your browser, and cites the current private parking Code of Practice.">
+    <meta name="theme-color" content="#14213d">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2314213d'/%3E%3Cpath d='M11 23V9h6.2a4.6 4.6 0 0 1 0 9.2H14V23z M14 12v3.4h3a1.7 1.7 0 0 0 0-3.4z' fill='%23fff' fill-rule='evenodd'/%3E%3C/svg%3E">
+    <style>
+        :root {
+            --ink: #14213d;
+            --text: #1f2937;
+            --muted: #5b6472;
+            --line: #e3e6eb;
+            --bg: #f5f6f8;
+            --surface: #ffffff;
+            --accent: #1f4fd8;
+            --accent-dark: #173ca8;
+            --accent-soft: #edf2ff;
+            --warn-bg: #fff6e9;
+            --warn-line: #f2c078;
+            --warn-text: #7a4100;
+            --danger: #b42318;
+            --ok: #0f7a4d;
+            --radius: 12px;
+            --radius-sm: 8px;
+            --shadow: 0 1px 2px rgba(20, 33, 61, 0.05), 0 8px 24px rgba(20, 33, 61, 0.06);
+            --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            --serif: Georgia, "Times New Roman", Times, serif;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: 84px; -webkit-text-size-adjust: 100%; }
+        body { margin: 0; font-family: var(--font); font-size: 16px; line-height: 1.55; color: var(--text); background: var(--bg); }
+        h1, h2, h3, h4, p { margin: 0; }
+        h1, h2, h3 { color: var(--ink); line-height: 1.2; letter-spacing: -0.01em; }
+        a { color: var(--accent); }
+        img { max-width: 100%; }
+        .container { width: 100%; max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+        .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+        :focus-visible { outline: 3px solid rgba(31, 79, 216, 0.45); outline-offset: 2px; border-radius: 4px; }
+
+        /* Header */
+        .site-header { position: sticky; top: 0; z-index: 30; background: rgba(255, 255, 255, 0.92); backdrop-filter: saturate(160%) blur(10px); border-bottom: 1px solid var(--line); }
+        .site-header .container { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 16px; }
+        .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; color: var(--ink); text-decoration: none; font-size: 17px; }
+        .brand-mark { width: 32px; height: 32px; border-radius: 8px; background: var(--ink); color: #fff; display: grid; place-items: center; font-weight: 800; font-size: 17px; }
+        .nav { display: flex; align-items: center; gap: 26px; }
+        .nav a:not(.btn) { color: var(--muted); text-decoration: none; font-size: 15px; font-weight: 500; }
+        .nav a:not(.btn):hover { color: var(--ink); }
+
+        /* Buttons */
+        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 10px 18px; border-radius: var(--radius-sm); border: 1px solid transparent; font: inherit; font-weight: 600; font-size: 15px; cursor: pointer; text-decoration: none; transition: background 0.15s, border-color 0.15s, color 0.15s; }
+        .btn-primary { background: var(--accent); color: #fff; }
+        .btn-primary:hover { background: var(--accent-dark); }
+        .btn-secondary { background: var(--surface); color: var(--ink); border-color: var(--line); }
+        .btn-secondary:hover { border-color: #c5cbd5; background: #fafbfc; }
+        .btn-ghost { background: transparent; color: var(--accent); padding-left: 8px; padding-right: 8px; }
+        .btn-ghost:hover { background: var(--accent-soft); }
+        .btn-sm { min-height: 36px; padding: 6px 12px; font-size: 14px; }
+        .btn[disabled] { opacity: 0.5; cursor: not-allowed; }
+
+        /* Hero */
+        .hero { padding: 64px 0 40px; }
+        .eyebrow { display: inline-block; font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--accent); background: var(--accent-soft); padding: 5px 12px; border-radius: 999px; }
+        .hero h1 { font-size: clamp(32px, 5vw, 50px); margin: 18px 0 14px; max-width: 760px; }
+        .hero p.lead { font-size: clamp(17px, 2vw, 20px); color: var(--muted); max-width: 660px; }
+        .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+        .hero-points { display: flex; flex-wrap: wrap; gap: 10px 28px; margin: 30px 0 0; padding: 0; list-style: none; color: var(--muted); font-size: 15px; }
+        .hero-points li { display: flex; align-items: center; gap: 8px; }
+        .tick { width: 18px; height: 18px; border-radius: 50%; background: #e3f4ec; color: var(--ok); display: inline-grid; place-items: center; font-size: 12px; font-weight: 800; flex: none; }
+
+        /* Notices */
+        .notice { border: 1px solid var(--warn-line); background: var(--warn-bg); color: var(--warn-text); border-radius: var(--radius-sm); padding: 12px 14px; font-size: 14.5px; }
+        .notice strong { color: #5c3100; }
+        .notice.info { border-color: #cbd8ff; background: var(--accent-soft); color: #24376f; }
+        .notice.info strong { color: var(--ink); }
+        .notice.danger { border-color: #f3b8b1; background: #fef3f2; color: #7a271a; }
+
+        /* Sections */
+        section { padding: 56px 0; }
+        .section-head { max-width: 680px; margin-bottom: 28px; }
+        .section-head h2 { font-size: clamp(24px, 3.2vw, 32px); margin-bottom: 8px; }
+        .section-head p { color: var(--muted); }
+        .alt { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+
+        /* Tool */
+        #tool { padding-top: 24px; }
+        .tool-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 24px; align-items: start; }
+        .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); }
+        .card-pad { padding: 24px; }
+
+        .stepper { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 0 0 22px; padding: 0; list-style: none; }
+        .step-btn { width: 100%; display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: var(--radius-sm); border: 1px solid var(--line); background: #fafbfc; font: inherit; font-size: 14px; font-weight: 600; color: var(--muted); cursor: pointer; text-align: left; }
+        .step-btn .num { width: 24px; height: 24px; border-radius: 50%; background: #e7eaf0; color: var(--muted); display: grid; place-items: center; font-size: 13px; flex: none; }
+        .step-btn[aria-current="step"] { border-color: var(--accent); background: var(--accent-soft); color: var(--ink); }
+        .step-btn[aria-current="step"] .num { background: var(--accent); color: #fff; }
+        .step-btn.done .num { background: #e3f4ec; color: var(--ok); }
+
+        .panel[hidden] { display: none; }
+        .panel h3 { font-size: 20px; margin-bottom: 4px; }
+        .panel > p.hint { color: var(--muted); font-size: 15px; margin-bottom: 18px; }
+
+        .field { margin-bottom: 16px; }
+        .field label, .legend { display: block; font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
+        .field .help { font-size: 13px; color: var(--muted); margin-top: 5px; }
+        .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+        input[type="text"], input[type="date"], input[type="time"], select, textarea { width: 100%; min-height: 44px; padding: 10px 12px; border: 1px solid #cfd5de; border-radius: var(--radius-sm); background: #fff; font: inherit; font-size: 16px; color: var(--text); }
+        textarea { min-height: 96px; resize: vertical; }
+        input:focus, select:focus, textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(31, 79, 216, 0.15); }
+        input::placeholder, textarea::placeholder { color: #9aa3b0; }
+        fieldset { border: 0; margin: 0 0 16px; padding: 0; min-width: 0; }
+
+        .seg { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+        .seg.three { grid-template-columns: repeat(3, 1fr); }
+        .seg label { position: relative; margin: 0; }
+        .seg input { position: absolute; opacity: 0; inset: 0; }
+        .seg span { display: block; text-align: center; padding: 10px 8px; min-height: 44px; border: 1px solid #cfd5de; border-radius: var(--radius-sm); font-size: 14.5px; font-weight: 600; color: var(--muted); cursor: pointer; background: #fff; }
+        .seg input:checked + span { border-color: var(--accent); background: var(--accent-soft); color: var(--ink); }
+        .seg input:focus-visible + span { outline: 3px solid rgba(31, 79, 216, 0.45); outline-offset: 2px; }
+
+        .choice { display: block; position: relative; margin-bottom: 10px; }
+        .choice input { position: absolute; opacity: 0; inset: 0; }
+        .choice .box { display: block; border: 1px solid #cfd5de; border-radius: var(--radius-sm); padding: 13px 14px 13px 44px; cursor: pointer; background: #fff; position: relative; }
+        .choice .box::before { content: ""; position: absolute; left: 14px; top: 16px; width: 18px; height: 18px; border-radius: 50%; border: 2px solid #aab2bf; background: #fff; }
+        .choice input:checked + .box { border-color: var(--accent); background: var(--accent-soft); }
+        .choice input:checked + .box::before { border-color: var(--accent); box-shadow: inset 0 0 0 4px #fff; background: var(--accent); }
+        .choice input:focus-visible + .box { outline: 3px solid rgba(31, 79, 216, 0.45); outline-offset: 2px; }
+        .choice input:disabled + .box { opacity: 0.5; cursor: not-allowed; }
+        .choice .t { display: block; font-weight: 600; color: var(--ink); font-size: 15px; }
+        .choice .d { display: block; color: var(--muted); font-size: 13.5px; margin-top: 2px; }
+
+        .subcard { border: 1px dashed #c5cbd5; border-radius: var(--radius-sm); padding: 16px 16px 2px; margin: 4px 0 16px; background: #fafbfc; }
+        .subcard[hidden] { display: none; }
+        .subcard h4 { font-size: 14px; color: var(--ink); margin-bottom: 12px; }
+
+        .check { display: flex; align-items: flex-start; gap: 10px; padding: 9px 0; font-size: 15px; cursor: pointer; }
+        .check input { width: 18px; height: 18px; margin: 3px 0 0; flex: none; accent-color: var(--accent); }
+
+        .panel-nav { display: flex; justify-content: space-between; gap: 12px; margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--line); }
+
+        .sig-pad { border: 1px solid #cfd5de; border-radius: var(--radius-sm); background: #fff; position: relative; }
+        .sig-pad canvas { display: block; width: 100%; height: 130px; touch-action: none; cursor: crosshair; }
+        .sig-pad .base { position: absolute; left: 16px; right: 16px; bottom: 30px; border-bottom: 1px solid #d5dae2; pointer-events: none; }
+
+        /* Preview */
+        .preview { position: sticky; top: 84px; }
+        .preview-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; padding: 14px 18px; border-bottom: 1px solid var(--line); }
+        .preview-bar h3 { font-size: 16px; }
+        .preview-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+        .preview-status { padding: 12px 18px 0; display: grid; gap: 8px; }
+        .preview-status:empty { display: none; }
+        .paper-wrap { padding: 18px; background: #eef0f4; border-radius: 0 0 var(--radius) var(--radius); max-height: calc(100vh - 230px); overflow: auto; }
+        .letter { background: #fff; color: #111; font-family: var(--serif); font-size: 15px; line-height: 1.6; padding: 48px 52px; border: 1px solid #dfe3ea; box-shadow: 0 1px 3px rgba(20, 33, 61, 0.08); min-height: 520px; overflow-wrap: anywhere; }
+        .letter .sender { text-align: right; white-space: pre-line; margin-bottom: 22px; }
+        .letter .recipient { white-space: pre-line; margin-bottom: 22px; }
+        .letter .subject { font-weight: 700; margin: 0 0 18px; }
+        .letter .subject div { font-weight: 400; }
+        .letter h4 { font-family: var(--serif); font-size: 15px; font-weight: 700; margin: 18px 0 4px; color: #111; }
+        .letter p { margin: 0 0 12px; }
+        .letter ol, .letter ul { margin: 0 0 12px; padding-left: 22px; }
+        .letter li { margin-bottom: 8px; }
+        .letter mark { background: #fff1c2; color: #5c3100; padding: 0 2px; border-radius: 2px; }
+        .letter .signoff { margin-top: 26px; }
+        .letter .sig-space { height: 56px; display: flex; align-items: flex-end; }
+        .letter .sig-space img { max-height: 56px; }
+        .letter .sig-typed { font-family: "Segoe Script", "Snell Roundhand", "Brush Script MT", "Lucida Handwriting", cursive; font-size: 28px; line-height: 1; color: #14213d; }
+        #letterBody[contenteditable="true"] { outline: 2px dashed #9db4f5; outline-offset: 6px; border-radius: 2px; }
+
+        /* Content blocks */
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+        .info-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; }
+        .alt .info-card { background: var(--bg); }
+        .info-card h3 { font-size: 17px; margin-bottom: 6px; }
+        .info-card p { color: var(--muted); font-size: 15px; }
+        .info-card .ref { display: inline-block; margin-top: 12px; font-size: 12.5px; font-weight: 600; color: var(--accent); background: var(--accent-soft); padding: 3px 9px; border-radius: 999px; }
+        .info-card .n { width: 34px; height: 34px; border-radius: 50%; background: var(--ink); color: #fff; display: grid; place-items: center; font-weight: 700; margin-bottom: 14px; }
+
+        .timeline { list-style: none; margin: 0; padding: 0; max-width: 780px; }
+        .timeline li { position: relative; padding: 0 0 26px 46px; }
+        .timeline li::before { content: attr(data-n); position: absolute; left: 0; top: 0; width: 30px; height: 30px; border-radius: 50%; background: var(--accent-soft); color: var(--accent); font-weight: 700; font-size: 14px; display: grid; place-items: center; }
+        .timeline li::after { content: ""; position: absolute; left: 14px; top: 34px; bottom: 4px; width: 2px; background: var(--line); }
+        .timeline li:last-child { padding-bottom: 0; }
+        .timeline li:last-child::after { display: none; }
+        .timeline h3 { font-size: 17px; margin-bottom: 4px; padding-top: 3px; }
+        .timeline p { color: var(--muted); font-size: 15px; }
+
+        .faq { max-width: 780px; }
+        .faq details { border-bottom: 1px solid var(--line); }
+        .faq summary { cursor: pointer; list-style: none; padding: 18px 34px 18px 0; font-weight: 600; color: var(--ink); position: relative; }
+        .faq summary::-webkit-details-marker { display: none; }
+        .faq summary::after { content: "+"; position: absolute; right: 4px; top: 14px; font-size: 22px; font-weight: 400; color: var(--muted); }
+        .faq details[open] summary::after { content: "\2212"; }
+        .faq details p { color: var(--muted); padding: 0 0 18px; font-size: 15.5px; }
+
+        footer { background: var(--ink); color: #c9d1e0; padding: 40px 0; font-size: 14px; }
+        footer .cols { display: grid; grid-template-columns: 2fr 1fr; gap: 32px; }
+        footer strong { color: #fff; }
+        footer p + p { margin-top: 10px; }
+        footer a { color: #fff; }
+        footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+
+        .toast { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%) translateY(20px); background: var(--ink); color: #fff; padding: 11px 18px; border-radius: 999px; font-size: 14.5px; font-weight: 500; opacity: 0; pointer-events: none; transition: opacity 0.2s, transform 0.2s; z-index: 50; max-width: calc(100vw - 32px); }
+        .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+        /* Tablet */
+        @media (max-width: 1023px) {
+            .tool-grid { grid-template-columns: 1fr; }
+            .preview { position: static; }
+            .paper-wrap { max-height: none; }
+            .grid-3 { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        /* Mobile */
+        @media (max-width: 719px) {
+            .container { padding: 0 16px; }
+            .nav a:not(.btn) { display: none; }
+            .hero { padding: 40px 0 28px; }
+            section { padding: 40px 0; }
+            .card-pad { padding: 18px 16px; }
+            .row { grid-template-columns: 1fr; gap: 0; }
+            .grid-3 { grid-template-columns: 1fr; }
+            .step-btn { flex-direction: column; gap: 4px; text-align: center; padding: 8px 4px; font-size: 12.5px; }
+            .seg.three { grid-template-columns: 1fr; }
+            .paper-wrap { padding: 10px; }
+            .letter { padding: 26px 20px; font-size: 14.5px; }
+            .preview-bar { padding: 12px 14px; }
+            .preview-actions { width: 100%; }
+            .preview-actions .btn { flex: 1 1 auto; }
+            .hero-actions .btn { flex: 1 1 100%; }
+            footer .cols { grid-template-columns: 1fr; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            * { transition: none !important; }
+        }
+
+        /* Print: the letter only */
+        @page { size: A4; margin: 20mm; }
+        @media print {
+            body { background: #fff; }
+            body > *:not(main), main > *:not(#tool), .tool-form, .preview-bar, .preview-status, .section-head, .toast { display: none !important; }
+            #tool, .container, .tool-grid, .preview, .paper-wrap { display: block; padding: 0; margin: 0; max-width: none; max-height: none; overflow: visible; background: #fff; border: 0; box-shadow: none; position: static; }
+            .letter { border: 0; box-shadow: none; padding: 0; font-size: 11.5pt; min-height: 0; }
+            .letter mark { background: none; color: inherit; }
+            .letter h4, .letter .signoff { break-after: avoid; }
+            .letter .signoff { break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">P</span>Parking Appeal Letter</a>
+            <nav class="nav" aria-label="Main">
+                <a href="#how">How it works</a>
+                <a href="#grounds">Grounds</a>
+                <a href="#next">What happens next</a>
+                <a href="#faq">FAQ</a>
+                <a class="btn btn-primary btn-sm" href="#tool">Start letter</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="top">
+        <div class="hero">
+            <div class="container">
+                <span class="eyebrow">Private parking charges, UK</span>
+                <h1>Appeal a private parking charge with a clear, correct letter.</h1>
+                <p class="lead">Answer a few questions and get a first-stage appeal letter that cites the current private parking Code of Practice. Free to use, and nothing you type leaves your browser.</p>
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="#tool">Start your letter</a>
+                    <a class="btn btn-secondary" href="#grounds">See the grounds</a>
+                </div>
+                <ul class="hero-points">
+                    <li><span class="tick" aria-hidden="true">&#10003;</span>No account, no upload</li>
+                    <li><span class="tick" aria-hidden="true">&#10003;</span>England, Wales, Scotland and Northern Ireland</li>
+                    <li><span class="tick" aria-hidden="true">&#10003;</span>Print, save as PDF or copy the text</li>
+                </ul>
+            </div>
+        </div>
+
+        <section id="tool" aria-labelledby="toolTitle">
+            <div class="container">
+                <div class="section-head">
+                    <h2 id="toolTitle">Write your appeal</h2>
+                    <p>The letter updates as you type. Anything still in <mark style="background:#fff1c2;color:#5c3100;padding:0 3px;border-radius:2px;">[SQUARE BRACKETS]</mark> needs your own facts before you send it.</p>
+                </div>
+
+                <div class="tool-grid">
+                    <!-- Form -->
+                    <div class="card card-pad tool-form">
+                        <ol class="stepper" aria-label="Steps">
+                            <li><button type="button" class="step-btn" data-goto="1" aria-current="step"><span class="num">1</span>Your notice</button></li>
+                            <li><button type="button" class="step-btn" data-goto="2"><span class="num">2</span>Your ground</button></li>
+                            <li><button type="button" class="step-btn" data-goto="3"><span class="num">3</span>Finish</button></li>
+                        </ol>
+
+                        <form id="appealForm" novalidate onsubmit="return false">
+                            <!-- Step 1 -->
+                            <div class="panel" data-step="1">
+                                <h3>Your notice</h3>
+                                <p class="hint">Copy these details from the parking charge notice.</p>
+
+                                <div class="notice" style="margin-bottom:18px;">
+                                    <strong>Private charges only.</strong> A <em>Penalty</em> Charge Notice from a council, Transport for London or the police follows different rules. Use the appeal route printed on that notice instead.
+                                </div>
+
+                                <div class="row">
+                                    <div class="field">
+                                        <label for="name">Your full name</label>
+                                        <input type="text" id="name" autocomplete="name" placeholder="As shown on the notice">
+                                    </div>
+                                    <div class="field">
+                                        <label for="vrm">Vehicle registration</label>
+                                        <input type="text" id="vrm" autocapitalize="characters" placeholder="AB12 CDE">
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label for="address">Your postal address</label>
+                                    <textarea id="address" autocomplete="street-address" placeholder="House number and street&#10;Town&#10;Postcode"></textarea>
+                                </div>
+                                <div class="row">
+                                    <div class="field">
+                                        <label for="operator">Parking operator</label>
+                                        <input type="text" id="operator" list="operatorList" placeholder="Name on the notice">
+                                        <datalist id="operatorList">
+                                            <option value="ParkingEye Ltd"></option>
+                                            <option value="Euro Car Parks Ltd"></option>
+                                            <option value="Horizon Parking Ltd"></option>
+                                            <option value="Smart Parking Ltd"></option>
+                                            <option value="APCOA Parking (UK) Ltd"></option>
+                                            <option value="National Car Parks Ltd"></option>
+                                            <option value="Britannia Parking Group Ltd"></option>
+                                        </datalist>
+                                    </div>
+                                    <div class="field">
+                                        <label for="pcn">Notice reference number</label>
+                                        <input type="text" id="pcn" placeholder="Reference on the notice">
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label for="location">Car park or location</label>
+                                    <input type="text" id="location" placeholder="As described on the notice">
+                                </div>
+                                <div class="row">
+                                    <div class="field">
+                                        <label for="parkDate">Date of parking</label>
+                                        <input type="date" id="parkDate">
+                                    </div>
+                                    <div class="field">
+                                        <label for="noticeDate">Date on the notice</label>
+                                        <input type="date" id="noticeDate">
+                                    </div>
+                                </div>
+                                <div class="notice info" id="deadlineHint" hidden></div>
+
+                                <div class="field" style="margin-top:16px;">
+                                    <label for="jurisdiction">Where was the vehicle parked?</label>
+                                    <select id="jurisdiction">
+                                        <option value="EW">England or Wales</option>
+                                        <option value="Scotland">Scotland</option>
+                                        <option value="Northern Ireland">Northern Ireland</option>
+                                    </select>
+                                    <div class="help" id="jurisdictionHelp"></div>
+                                </div>
+
+                                <fieldset>
+                                    <span class="legend">You are appealing as</span>
+                                    <div class="seg">
+                                        <label><input type="radio" name="capacity" value="keeper" checked><span>Registered keeper</span></label>
+                                        <label><input type="radio" name="capacity" value="driver"><span>Driver</span></label>
+                                    </div>
+                                    <div class="help">A registered keeper does not have to say who was driving. If you appeal as the driver, the keeper protections do not apply.</div>
+                                </fieldset>
+
+                                <div class="panel-nav">
+                                    <button type="button" class="btn btn-ghost" id="exampleBtn">Fill with an example</button>
+                                    <button type="button" class="btn btn-primary" data-goto="2">Next: your ground</button>
+                                </div>
+                            </div>
+
+                            <!-- Step 2 -->
+                            <div class="panel" data-step="2" hidden>
+                                <h3>Your ground of appeal</h3>
+                                <p class="hint">Choose the one that matches what happened. One specific, evidenced ground is stronger than several vague ones.</p>
+
+                                <fieldset>
+                                    <legend class="sr-only">Ground of appeal</legend>
+                                    <label class="choice"><input type="radio" name="ground" value="grace" checked><span class="box"><span class="t">Left within the grace or consideration period</span><span class="d">Left shortly after paid or free time ended, or shortly after arriving.</span></span></label>
+                                    <label class="choice"><input type="radio" name="ground" value="keeper"><span class="box"><span class="t" id="keeperGroundTitle">Notice arrived late</span><span class="d" id="keeperGroundDesc">Posted camera ticket, nothing left on the windscreen, and it arrived more than 14 days after parking.</span></span></label>
+                                    <label class="choice"><input type="radio" name="ground" value="keying"><span class="box"><span class="t">Minor keying error</span><span class="d">Paid, but mistyped a character such as 0 for O or 1 for I.</span></span></label>
+                                    <label class="choice"><input type="radio" name="ground" value="signage"><span class="box"><span class="t">Missing, hidden or unreadable signs</span><span class="d">The terms were not clearly displayed.</span></span></label>
+                                    <label class="choice"><input type="radio" name="ground" value="machine"><span class="box"><span class="t">Payment machine or app not working</span><span class="d">The driver tried to pay but could not.</span></span></label>
+                                </fieldset>
+
+                                <div class="subcard" data-for="grace">
+                                    <h4>Details for this ground</h4>
+                                    <fieldset>
+                                        <span class="legend">Which applies?</span>
+                                        <div class="seg">
+                                            <label><input type="radio" name="period" value="grace" checked><span>Left soon after time ended</span></label>
+                                            <label><input type="radio" name="period" value="consideration"><span>Left soon after arriving</span></label>
+                                        </div>
+                                    </fieldset>
+                                    <div class="row">
+                                        <div class="field" id="arrivalField" hidden>
+                                            <label for="arrivalTime">Arrival time</label>
+                                            <input type="time" id="arrivalTime">
+                                        </div>
+                                        <div class="field" id="endField">
+                                            <label for="endTime">Paid or free time ended</label>
+                                            <input type="time" id="endTime">
+                                        </div>
+                                        <div class="field">
+                                            <label for="exitTime">Exit time</label>
+                                            <input type="time" id="exitTime">
+                                        </div>
+                                    </div>
+                                    <div class="field"><div class="help" style="margin-top:-6px;">For most time-limited parking the grace period is 10 minutes. It does not apply in short-stay areas of 30 minutes or less, such as drop-off zones.</div></div>
+                                </div>
+
+                                <div class="subcard" data-for="keeper" hidden>
+                                    <h4>Details for this ground</h4>
+                                    <div class="field" id="receivedField">
+                                        <label for="receivedDate">Date you received the notice</label>
+                                        <input type="date" id="receivedDate">
+                                        <div class="help" id="keeperCalc"></div>
+                                    </div>
+                                    <div class="field" id="keeperNoFields" hidden><div class="help" style="margin-top:0;">Nothing more is needed for this ground.</div></div>
+                                </div>
+
+                                <div class="subcard" data-for="keying" hidden>
+                                    <h4>Details for this ground</h4>
+                                    <div class="field">
+                                        <label for="enteredVrm">Registration that was entered by mistake</label>
+                                        <input type="text" id="enteredVrm" autocapitalize="characters" placeholder="AB12 CD3">
+                                        <div class="help">You will need proof of payment. A major error, such as another car's registration, only gets a reduction to £20 under the Code.</div>
+                                    </div>
+                                </div>
+
+                                <div class="subcard" data-for="signage" hidden>
+                                    <h4>Details for this ground</h4>
+                                    <div class="field">
+                                        <label for="signProblem">What was wrong with the signs?</label>
+                                        <input type="text" id="signProblem" placeholder="e.g. no sign at the entrance, and the others were unlit">
+                                        <div class="help">Take dated photographs of the entrance and the signs as soon as you can.</div>
+                                    </div>
+                                </div>
+
+                                <div class="subcard" data-for="machine" hidden>
+                                    <h4>Details for this ground</h4>
+                                    <div class="row">
+                                        <div class="field">
+                                            <label for="machineProblem">What failed?</label>
+                                            <input type="text" id="machineProblem" placeholder="e.g. the payment machine was out of order">
+                                        </div>
+                                        <div class="field">
+                                            <label for="machineTime">Time you tried to pay</label>
+                                            <input type="time" id="machineTime">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="panel-nav">
+                                    <button type="button" class="btn btn-secondary" data-goto="1">Back</button>
+                                    <button type="button" class="btn btn-primary" data-goto="3">Next: finish</button>
+                                </div>
+                            </div>
+
+                            <!-- Step 3 -->
+                            <div class="panel" data-step="3" hidden>
+                                <h3>Finish your letter</h3>
+                                <p class="hint">Tick what you are enclosing and what you want to ask the operator for.</p>
+
+                                <fieldset>
+                                    <span class="legend">Evidence you are enclosing</span>
+                                    <label class="check"><input type="checkbox" data-ev="Photographs of the signs and the parking area"><span>Photographs of the signs and the parking area</span></label>
+                                    <label class="check"><input type="checkbox" data-ev="Proof of payment"><span>Proof of payment (receipt, app record or bank entry)</span></label>
+                                    <label class="check"><input type="checkbox" data-ev="Photographs or records of the payment machine or app fault"><span>Photographs or records of the machine or app fault</span></label>
+                                    <label class="check"><input type="checkbox" data-ev="Dashcam footage or other record of arrival and exit times"><span>Dashcam footage or other record of arrival and exit times</span></label>
+                                    <label class="check"><input type="checkbox" data-ev="Copy of the notice"><span>Copy of the notice</span></label>
+                                </fieldset>
+
+                                <fieldset>
+                                    <span class="legend">Ask the operator for</span>
+                                    <label class="check"><input type="checkbox" id="reqLandowner" checked><span>Confirmation that it holds the landowner's written authority</span></label>
+                                    <label class="check"><input type="checkbox" id="reqSar"><span>A copy of your personal data, including camera images (subject access request)</span></label>
+                                    <label class="check"><input type="checkbox" id="reqAppeal" checked><span>The independent appeal route if it rejects your appeal</span></label>
+                                </fieldset>
+
+                                <fieldset>
+                                    <span class="legend">Signature</span>
+                                    <div class="seg three">
+                                        <label><input type="radio" name="sig" value="hand" checked><span>Sign by hand</span></label>
+                                        <label><input type="radio" name="sig" value="typed"><span>Typed</span></label>
+                                        <label><input type="radio" name="sig" value="draw"><span>Draw</span></label>
+                                    </div>
+                                    <div id="sigDraw" hidden style="margin-top:12px;">
+                                        <div class="sig-pad"><canvas id="sigCanvas" aria-label="Signature drawing area"></canvas><div class="base"></div></div>
+                                        <button type="button" class="btn btn-ghost btn-sm" id="sigClear" style="margin-top:6px;">Clear signature</button>
+                                    </div>
+                                </fieldset>
+
+                                <div class="notice">
+                                    <strong>Before you send it.</strong> Read the whole letter and remove anything that is not true for you. Send it within 28 days of receiving the notice, using the appeal website or address printed on it, and keep a copy with proof of sending.
+                                </div>
+
+                                <div class="panel-nav">
+                                    <button type="button" class="btn btn-secondary" data-goto="2">Back</button>
+                                    <a class="btn btn-primary" href="#letterCard">Review your letter</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Preview -->
+                    <div class="card preview" id="letterCard">
+                        <div class="preview-bar">
+                            <h3>Your letter</h3>
+                            <div class="preview-actions">
+                                <button type="button" class="btn btn-secondary btn-sm" id="editBtn" aria-pressed="false">Edit text</button>
+                                <button type="button" class="btn btn-secondary btn-sm" id="copyBtn">Copy</button>
+                                <button type="button" class="btn btn-secondary btn-sm" id="txtBtn">Download .txt</button>
+                                <button type="button" class="btn btn-primary btn-sm" id="printBtn">Print / PDF</button>
+                            </div>
+                        </div>
+                        <div class="preview-status" id="status" aria-live="polite"></div>
+                        <div class="paper-wrap">
+                            <article class="letter" id="letter" aria-label="Letter preview">
+                                <div class="sender" id="lSender"></div>
+                                <div class="recipient" id="lRecipient"></div>
+                                <div class="subject" id="lSubject"></div>
+                                <div id="letterBody"></div>
+                                <div id="lEnclosures"></div>
+                                <div class="signoff">
+                                    <p>Yours faithfully,</p>
+                                    <div class="sig-space" id="lSig"></div>
+                                    <div id="lSigner"></div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="how" class="alt" aria-labelledby="howTitle">
+            <div class="container">
+                <div class="section-head">
+                    <h2 id="howTitle">How it works</h2>
+                    <p>Three steps, a few minutes. You stay in control of every word.</p>
+                </div>
+                <div class="grid-3">
+                    <div class="info-card"><div class="n">1</div><h3>Enter the notice details</h3><p>Reference, registration, operator and dates. Tell us where the car was parked, because the rules differ across the UK.</p></div>
+                    <div class="info-card"><div class="n">2</div><h3>Pick your ground</h3><p>Choose what actually happened and add the specifics. The letter cites the matching clause of the Code of Practice.</p></div>
+                    <div class="info-card"><div class="n">3</div><h3>Check and send</h3><p>Read it, edit anything, then print, save as PDF or copy the text into the operator's appeal form.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="grounds" aria-labelledby="groundsTitle">
+            <div class="container">
+                <div class="section-head">
+                    <h2 id="groundsTitle">The five grounds explained</h2>
+                    <p>Clause numbers refer to the private parking sector single Code of Practice, version 1.1. It is an industry code that members of the two trade associations must follow, not an Act of Parliament.</p>
+                </div>
+                <div class="grid-3">
+                    <div class="info-card"><h3>Grace or consideration period</h3><p>Operators must allow time to decide whether to park, and a grace period after permitted parking ends. For most time-limited parking that is 10 minutes. A charge must not be issued during it.</p><span class="ref">Clauses 5.1, 5.2 and Annex B</span></div>
+                    <div class="info-card"><h3>Notice arrived late</h3><p>In England and Wales, a posted notice with nothing left on the windscreen must reach the keeper within 14 days of parking. If it did not, the operator cannot claim from the keeper.</p><span class="ref">Protection of Freedoms Act 2012, Schedule 4</span></div>
+                    <div class="info-card"><h3>Minor keying error</h3><p>If the tariff was paid but one character was mistyped, the charge must not be pursued. Larger mistakes only earn a reduction to £20.</p><span class="ref">Clause 6.3 and Annex F</span></div>
+                    <div class="info-card"><h3>Unclear signs</h3><p>There must be an entrance sign, and signs inside the site must be conspicuous and legible in all lighting conditions.</p><span class="ref">Clause 3.1 and Annex A</span></div>
+                    <div class="info-card"><h3>Machine or app failure</h3><p>If the operator's equipment stopped the driver from paying, ask for cancellation and send evidence of the fault. This is the hardest ground to prove without photographs.</p><span class="ref">Annex F.1(i)</span></div>
+                    <div class="info-card"><h3>Scotland and Northern Ireland</h3><p>The keeper liability law does not apply there, so the operator can pursue only the driver. Choose your location in step 1 and the letter adjusts.</p><span class="ref">Checked October 2026</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="next" class="alt" aria-labelledby="nextTitle">
+            <div class="container">
+                <div class="section-head">
+                    <h2 id="nextTitle">What happens next</h2>
+                    <p>No result is guaranteed at any stage. These are the steps and the time limits.</p>
+                </div>
+                <ol class="timeline">
+                    <li data-n="1"><h3>Appeal to the operator</h3><p>Appeal within 28 days of receiving the notice. The operator must reply within 28 days, or acknowledge your appeal and say when it will decide.</p></li>
+                    <li data-n="2"><h3>Independent appeal</h3><p>If the operator says no, it must tell you how to appeal to the independent service: POPLA for British Parking Association members, the IAS for International Parking Community members. This is free for you, and enforcement must pause while it is decided.</p></li>
+                    <li data-n="3"><h3>Debt recovery letters</h3><p>Debt recovery agencies are not bailiffs and cannot take goods. Their letters do not create a court judgment.</p></li>
+                    <li data-n="4"><h3>Letter of claim or court claim form</h3><p>Operators do take people to the county court. Both documents have strict deadlines, and an unanswered claim form leads to a judgment against you. Do not ignore them. Get advice at this point.</p></li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="courtPack" aria-labelledby="courtPackTitle" hidden>
+            <div class="container">
+                <div class="card card-pad" style="display:grid;gap:16px;">
+                    <div class="section-head" style="margin:0;">
+                        <span class="eyebrow">Court Defence Pack</span>
+                        <h2 id="courtPackTitle" style="margin-top:14px;">Had a letter of claim or a court claim form?</h2>
+                        <p>The pack works out your deadlines and drafts a reply to the letter of claim, a defence and a witness statement from one set of answers. For private parking claims in the County Court in England and Wales. Not legal advice.</p>
+                    </div>
+                    <div><a class="btn btn-primary" id="courtPackLink" href="#" rel="noopener">Get the Court Defence Pack</a></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" aria-labelledby="faqTitle">
+            <div class="container">
+                <div class="section-head">
+                    <h2 id="faqTitle">Questions</h2>
+                </div>
+                <div class="faq">
+                    <details><summary>Is this legal advice?</summary><p>No. This tool fills in a template letter from your answers. It does not assess your case, and it cannot promise an outcome. If you have received a letter of claim or a county court claim form, get advice before replying.</p></details>
+                    <details><summary>What is the difference between a Parking Charge Notice and a Penalty Charge Notice?</summary><p>A Parking Charge Notice comes from a private company and is a claim that you owe money under a contract. A Penalty Charge Notice comes from a council, Transport for London or the police and is backed by statute. This tool covers the first kind only.</p></details>
+                    <details><summary>Do I have to tell the operator who was driving?</summary><p>No. A registered keeper is not obliged to name the driver to a private parking operator. In England and Wales the operator can still pursue the keeper if it has met every condition in Schedule 4 of the Protection of Freedoms Act 2012.</p></details>
+                    <details><summary>Should I just ignore the notice?</summary><p>No. Ignoring it means losing the right to appeal, and operators can and do issue county court claims. Appeal in time, and never ignore a letter of claim or a claim form.</p></details>
+                    <details><summary>Where does my information go?</summary><p>Nowhere. The page runs entirely in your browser. Nothing you type is sent to a server or saved, so it is gone when you close or reload the page. Save or print your letter before you leave.</p></details>
+                    <details><summary>How current is the wording?</summary><p>The clause numbers were checked against version 1.1 of the single Code of Practice on 11 October 2026. The government plans a statutory code but has not set a start date; the wording will need updating when that arrives.</p></details>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container cols">
+            <div>
+                <p><strong>Parking Appeal Letter</strong></p>
+                <p>General information and a template letter, not legal advice. No outcome is guaranteed. For private parking charges only, not council Penalty Charge Notices.</p>
+                <p>Wording last checked 11 October 2026 against the private parking sector single Code of Practice, version 1.1.</p>
+            </div>
+            <ul>
+                <li><a href="#tool">Write your appeal</a></li>
+                <li><a href="#grounds">The five grounds</a></li>
+                <li><a href="#next">What happens next</a></li>
+                <li><a href="#faq">Questions</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script>
+        // Clause references are to the private parking sector single Code of Practice, version 1.1
+        // (operative text 17 February 2025). Re-check them when the Code is revised.
+        // Paste your Gumroad product link here to show the Court Defence Pack section. Leave empty to hide it.
+        const COURT_PACK_URL = '';
+
+        const $ = id => document.getElementById(id);
+        const val = id => $(id).value.trim();
+        const radio = name => document.querySelector(`input[name="${name}"]:checked`).value;
+        const ph = (value, label) => value || `[${label}]`;
+        const fmtDate = iso => iso ? new Date(iso + 'T00:00:00').toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }) : '';
+        const localIso = d => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+        const daysBetween = (a, b) => Math.round((new Date(b + 'T00:00:00') - new Date(a + 'T00:00:00')) / 86400000);
+
+        let editing = false;
+        let sigDataUrl = '';
+
+        /* ---------- Letter content ---------- */
+        function buildLetter() {
+            const jurisdiction = $('jurisdiction').value;
+            const isEW = jurisdiction === 'EW';
+            const isKeeper = radio('capacity') === 'keeper';
+            const ground = radio('ground');
+            const name = ph(val('name'), 'YOUR FULL NAME');
+            const vrm = ph(val('vrm').toUpperCase(), 'REGISTRATION');
+            const operator = ph(val('operator'), 'OPERATOR NAME');
+            const pcn = ph(val('pcn'), 'NOTICE REFERENCE');
+            const location = ph(val('location'), 'CAR PARK OR LOCATION');
+            const parkDate = ph(fmtDate($('parkDate').value), 'DATE OF PARKING');
+            const noticeDate = ph(fmtDate($('noticeDate').value), 'DATE ON THE NOTICE');
+            const code = 'the private parking sector single Code of Practice';
+
+            const blocks = [];
+            blocks.push({ p: [`I am appealing against the Parking Charge Notice referred to above, issued by ${operator} in respect of vehicle ${vrm}.`] });
+
+            if (isKeeper && isEW) {
+                blocks.push({ h: 'My position as registered keeper', p: [
+                    'I am the registered keeper of the vehicle and I am appealing in that capacity only. A registered keeper is not obliged to tell a private parking operator who was driving, and I decline to do so. Nothing in this letter is a statement about who the driver was. You may recover an unpaid parking charge from a keeper only if every condition in Schedule 4 of the Protection of Freedoms Act 2012 has been met.'
+                ] });
+            } else if (isKeeper) {
+                blocks.push({ h: 'My position as registered keeper', p: [
+                    `I am the registered keeper of the vehicle and I am appealing in that capacity only. A registered keeper is not obliged to tell a private parking operator who was driving, and I decline to do so. Nothing in this letter is a statement about who the driver was. Schedule 4 of the Protection of Freedoms Act 2012 applies only in England and Wales, and no equivalent keeper liability is in force in ${jurisdiction}. Any claim you may have is against the driver alone.`
+                ] });
+            }
+
+            if (ground === 'grace') {
+                const exit = ph($('exitTime').value, 'EXIT TIME');
+                if (radio('period') === 'grace') {
+                    const end = ph($('endTime').value, 'TIME PAID OR FREE PARKING ENDED');
+                    blocks.push({ h: 'Ground of appeal: the charge was issued within the grace period', p: [
+                        `Clause 5.2 of ${code} requires a grace period at the end of the permitted parking time and states that a parking charge must not be issued during a grace period. Annex B, Table B.1 sets the minimum period.`,
+                        `Permitted parking ended at ${end} and the vehicle left at ${exit}. It therefore left within the grace period that applies to this site. Annex F, paragraph F.1(i) provides that a parking charge must not be pursued where the operator has breached an obligation in the Code relating to the issue of a notice. Please cancel the charge.`
+                    ] });
+                } else {
+                    const arrival = ph($('arrivalTime').value, 'ARRIVAL TIME');
+                    blocks.push({ h: 'Ground of appeal: the vehicle left within the consideration period', p: [
+                        `Clause 5.1 of ${code} requires a consideration period on arrival, so that a driver can read the terms and decide whether to park. Annex B, Table B.1 sets the minimum period.`,
+                        `The vehicle arrived at ${arrival} and left at ${exit}. It therefore left within the consideration period that applies to this site. Annex F, paragraph F.1(i) provides that a parking charge must not be pursued where the operator has breached an obligation in the Code relating to the issue of a notice. Please cancel the charge.`
+                    ] });
+                }
+            } else if (ground === 'keeper' && isEW) {
+                const received = ph(fmtDate($('receivedDate').value), 'DATE RECEIVED');
+                blocks.push({ h: 'Ground of appeal: no keeper liability', p: [
+                    `No notice was left on the vehicle, so paragraph 9 of Schedule 4 to the Protection of Freedoms Act 2012 applies. Paragraphs 9(4) and 9(5) require the Notice to Keeper to be delivered within the relevant period of 14 days beginning with the day after the parking period ended.`,
+                    `The parking event was on ${parkDate}. Your notice is dated ${noticeDate} and I received it on ${received}, which is outside that period. Because the conditions in paragraph 6 of Schedule 4 have not been met, you have no right under paragraph 4 to recover the charge from me as keeper. Please cancel the charge.`
+                ] });
+            } else if (ground === 'keeper') {
+                blocks.push({ h: `Ground of appeal: no keeper liability in ${jurisdiction}`, p: [
+                    `The parking event took place in ${jurisdiction}. Schedule 4 of the Protection of Freedoms Act 2012 applies only in England and Wales, and no equivalent keeper liability is in force in ${jurisdiction}. You can therefore pursue only the driver, and you have not shown who the driver was. I am the registered keeper and I am not obliged to tell you. Please cancel the charge.`
+                ] });
+            } else if (ground === 'keying') {
+                const entered = ph(val('enteredVrm').toUpperCase(), 'WHAT WAS ENTERED');
+                blocks.push({ h: 'Ground of appeal: minor keying error', p: [
+                    `The parking tariff was paid in full, but a minor error was made when the registration was entered: ${entered} instead of ${vrm}. Proof of payment is enclosed.`,
+                    `Annex F, paragraph F.1(h) of ${code} provides that a parking charge must not be pursued where the driver has paid the tariff but made a minor keying error. Clause 6.3 requires you to have a procedure to avoid enforcing charges in these cases. Please cancel the charge.`
+                ] });
+            } else if (ground === 'signage') {
+                const problem = ph(val('signProblem'), 'DESCRIBE WHAT WAS WRONG WITH THE SIGNS');
+                blocks.push({ h: 'Ground of appeal: the signs did not make the terms clear', p: [
+                    `Clause 3.1 of ${code} requires an entrance sign, and signs within the site that are conspicuous and legible in all lighting conditions. Annex A sets the requirements for entrance signs.`,
+                    `At this site: ${problem}. Photographs are enclosed. Terms that were not brought clearly to the driver's attention cannot form part of a contract, so no parking charge is payable. Please cancel the charge.`
+                ] });
+            } else if (ground === 'machine') {
+                const problem = ph(val('machineProblem'), 'DESCRIBE WHAT FAILED');
+                const time = ph($('machineTime').value, 'TIME');
+                blocks.push({ h: 'Ground of appeal: payment could not be made because your equipment failed', p: [
+                    `The driver tried to pay at ${time}, but could not: ${problem}. Evidence is enclosed. The driver could not comply with the payment terms through no fault of their own.`,
+                    `I ask you to cancel the charge, having regard to Annex F, paragraph F.1(i) of ${code}, which covers cases where the operator's breach of the Code left the driver unable to comply.`
+                ] });
+            }
+
+            const requests = [];
+            if ($('reqLandowner').checked) requests.push('Landowner authority. Clause 14.1 of the Code requires you to hold written confirmation from the landowner before a parking charge can be issued. Please confirm that you held this on the date of the parking event and provide a copy, redacted where necessary.');
+            if ($('reqSar').checked) requests.push(`Subject access request. Please treat this as a request under Article 15 of the UK GDPR, and send me the personal data you hold about me and vehicle ${vrm}, including camera images with timestamps and any payment machine records for the date in question.`);
+            if ($('reqAppeal').checked) requests.push('Independent appeal. Clause 8.4.1 of the Code requires you to respond to this appeal within 28 days. If you reject it, clause 8.4.6 requires you to give me the option of appealing to the relevant Appeals Service (POPLA or the IAS). Please include everything I need to do so, including any verification code. Under clause 8.4.7, enforcement and debt resolution must be suspended while an independent appeal is being decided.');
+            if (requests.length) blocks.push({ h: 'Requests', ol: requests });
+
+            const enclosures = [...document.querySelectorAll('[data-ev]:checked')].map(c => c.dataset.ev);
+
+            return {
+                sender: `${name}\n${ph(val('address'), 'YOUR ADDRESS')}\n\n${fmtDate(localIso(new Date()))}`,
+                recipient: `Appeals Department\n${operator}`,
+                subject: [`Appeal against Parking Charge Notice ${pcn}`, `Vehicle registration: ${vrm}`, `Location: ${location}`, `Date of parking: ${parkDate}`, `Date of notice: ${noticeDate}`],
+                blocks, enclosures, name,
+                signer: isKeeper ? `Registered keeper of ${vrm}` : ''
+            };
+        }
+
+        /* ---------- Rendering ---------- */
+        function withMarks(el, text) {
+            el.textContent = '';
+            text.split(/(\[[^\]]+\])/).forEach(part => {
+                if (!part) return;
+                if (/^\[[^\]]+\]$/.test(part)) {
+                    const m = document.createElement('mark');
+                    m.textContent = part;
+                    el.appendChild(m);
+                } else {
+                    el.appendChild(document.createTextNode(part));
+                }
+            });
+            return el;
+        }
+        const make = (tag, text) => withMarks(document.createElement(tag), text);
+
+        function bodyToPlain(blocks) {
+            const out = ['Dear Appeals Department,'];
+            blocks.forEach(b => {
+                if (b.h) out.push(b.h.toUpperCase());
+                (b.p || []).forEach(p => out.push(p));
+                (b.ol || []).forEach((li, i) => out.push(`${i + 1}. ${li}`));
+            });
+            return out.join('\n\n');
+        }
+
+        function plainText() {
+            const L = buildLetter();
+            const body = editing ? $('letterBody').innerText.trim() : bodyToPlain(L.blocks);
+            const parts = [L.sender, L.recipient, L.subject.join('\n'), body];
+            if (L.enclosures.length) parts.push('Enclosures:\n' + L.enclosures.map(e => `- ${e}`).join('\n'));
+            parts.push(`Yours faithfully,\n\n\n${L.name}${L.signer ? '\n' + L.signer : ''}`);
+            return parts.join('\n\n');
+        }
+
+        function render() {
+            syncForm();
+            const L = buildLetter();
+            withMarks($('lSender'), L.sender);
+            withMarks($('lRecipient'), L.recipient);
+
+            const subject = $('lSubject');
+            subject.textContent = '';
+            L.subject.forEach((line, i) => subject.appendChild(i === 0 ? make('span', line) : make('div', line)));
+
+            if (!editing) {
+                const body = $('letterBody');
+                body.textContent = '';
+                body.appendChild(make('p', 'Dear Appeals Department,'));
+                L.blocks.forEach(b => {
+                    if (b.h) body.appendChild(make('h4', b.h));
+                    (b.p || []).forEach(p => body.appendChild(make('p', p)));
+                    if (b.ol) {
+                        const ol = document.createElement('ol');
+                        b.ol.forEach(li => ol.appendChild(make('li', li)));
+                        body.appendChild(ol);
+                    }
+                });
+            }
+
+            const enc = $('lEnclosures');
+            enc.textContent = '';
+            if (L.enclosures.length) {
+                enc.appendChild(make('h4', 'Enclosures'));
+                const ul = document.createElement('ul');
+                L.enclosures.forEach(e => ul.appendChild(make('li', e)));
+                enc.appendChild(ul);
+            }
+
+            const sig = $('lSig');
+            sig.textContent = '';
+            const mode = radio('sig');
+            if (mode === 'typed' && val('name')) {
+                const s = document.createElement('span');
+                s.className = 'sig-typed';
+                s.textContent = val('name');
+                sig.appendChild(s);
+            } else if (mode === 'draw' && sigDataUrl) {
+                const img = document.createElement('img');
+                img.src = sigDataUrl;
+                img.alt = 'Signature';
+                sig.appendChild(img);
+            }
+            const signer = $('lSigner');
+            signer.textContent = '';
+            signer.appendChild(make('div', L.name));
+            if (L.signer) signer.appendChild(make('div', L.signer));
+
+            renderStatus();
+        }
+
+        function renderStatus() {
+            const status = $('status');
+            status.textContent = '';
+            const add = (cls, html) => {
+                const d = document.createElement('div');
+                d.className = 'notice ' + cls;
+                d.innerHTML = html;
+                status.appendChild(d);
+            };
+            const left = $('letter').querySelectorAll('mark').length;
+            if (editing) add('info', '<strong>Editing.</strong> The letter body will not update from the form until you choose "Use form answers".');
+            if (left) add('', `<strong>${left} item${left === 1 ? '' : 's'} still to fill in.</strong> Replace everything highlighted in [SQUARE BRACKETS] before sending.`);
+            const pd = $('parkDate').value, rd = $('receivedDate').value;
+            if (radio('ground') === 'keeper' && $('jurisdiction').value === 'EW' && pd && rd && daysBetween(pd, rd) <= 14) add('', '<strong>Check your dates.</strong> This letter says the notice arrived more than 14 days after parking, but the dates you entered are within 14 days. Correct the dates or choose a different ground. Do not send a statement that is not true.');
+        }
+
+        /* ---------- Form state that depends on other answers ---------- */
+        function syncForm() {
+            const jurisdiction = $('jurisdiction').value;
+            const isEW = jurisdiction === 'EW';
+            const isKeeper = radio('capacity') === 'keeper';
+
+            $('jurisdictionHelp').textContent = isEW
+                ? 'In England and Wales the operator can pursue the keeper if it meets every condition in Schedule 4 of the Protection of Freedoms Act 2012.'
+                : `Schedule 4 does not apply in ${jurisdiction}, so the operator can pursue only the driver. Last checked October 2026; confirm this is still current.`;
+
+            const keeperRadio = document.querySelector('input[name="ground"][value="keeper"]');
+            keeperRadio.disabled = !isKeeper;
+            if (!isKeeper && keeperRadio.checked) document.querySelector('input[name="ground"][value="grace"]').checked = true;
+            $('keeperGroundTitle').textContent = isEW ? 'Notice arrived late' : `No keeper liability in ${jurisdiction}`;
+            $('keeperGroundDesc').textContent = !isKeeper
+                ? 'Only available when you appeal as the registered keeper.'
+                : isEW
+                    ? 'Posted camera ticket, nothing left on the windscreen, and it arrived more than 14 days after parking.'
+                    : 'The operator can pursue only the driver, and the keeper does not have to say who was driving.';
+            $('receivedField').hidden = !isEW;
+            $('keeperNoFields').hidden = isEW;
+
+            const ground = radio('ground');
+            document.querySelectorAll('.subcard').forEach(s => { s.hidden = s.dataset.for !== ground; });
+            const isGrace = radio('period') === 'grace';
+            $('arrivalField').hidden = isGrace;
+            $('endField').hidden = !isGrace;
+
+            const hint = $('deadlineHint');
+            const nd = $('noticeDate').value;
+            if (nd) {
+                const d = new Date(nd + 'T00:00:00');
+                d.setDate(d.getDate() + 28);
+                hint.hidden = false;
+                hint.innerHTML = `<strong>Time limit.</strong> You have 28 days from receiving the notice to appeal. Counting from the date on the notice, that is <strong>${d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</strong>.`;
+            } else {
+                hint.hidden = true;
+            }
+
+            const calc = $('keeperCalc');
+            const pd = $('parkDate').value, rd = $('receivedDate').value;
+            if (pd && rd) {
+                const n = daysBetween(pd, rd);
+                calc.textContent = n > 14
+                    ? `You received it ${n} days after the parking date, which is more than 14.`
+                    : `You received it ${n} days after the parking date. This ground needs more than 14 days, so it may not apply.`;
+            } else {
+                calc.textContent = 'Add the date of parking in step 1 to see the gap.';
+            }
+        }
+
+        /* ---------- Steps ---------- */
+        function goTo(step) {
+            document.querySelectorAll('.panel').forEach(p => { p.hidden = p.dataset.step !== String(step); });
+            document.querySelectorAll('.step-btn').forEach(b => {
+                const n = Number(b.dataset.goto);
+                if (n === step) b.setAttribute('aria-current', 'step'); else b.removeAttribute('aria-current');
+                b.classList.toggle('done', n < step);
+            });
+            if (step === 3 && radio('sig') === 'draw') sizeCanvas();
+        }
+        document.querySelectorAll('[data-goto]').forEach(b => b.addEventListener('click', () => {
+            goTo(Number(b.dataset.goto));
+            const form = document.querySelector('.tool-form');
+            if (form.getBoundingClientRect().top < 0) form.scrollIntoView();
+        }));
+
+        /* ---------- Signature pad ---------- */
+        const canvas = $('sigCanvas');
+        const ctx = canvas.getContext('2d');
+        let drawing = false;
+        function sizeCanvas() {
+            const r = canvas.getBoundingClientRect();
+            if (!r.width) return;
+            const ratio = window.devicePixelRatio || 1;
+            canvas.width = r.width * ratio;
+            canvas.height = r.height * ratio;
+            ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+            ctx.lineWidth = 2.2;
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+            ctx.strokeStyle = '#14213d';
+            sigDataUrl = '';
+        }
+        const point = e => { const r = canvas.getBoundingClientRect(); return [e.clientX - r.left, e.clientY - r.top]; };
+        canvas.addEventListener('pointerdown', e => { drawing = true; canvas.setPointerCapture(e.pointerId); ctx.beginPath(); ctx.moveTo(...point(e)); });
+        canvas.addEventListener('pointermove', e => { if (!drawing) return; ctx.lineTo(...point(e)); ctx.stroke(); });
+        const endStroke = () => { if (!drawing) return; drawing = false; sigDataUrl = canvas.toDataURL('image/png'); render(); };
+        canvas.addEventListener('pointerup', endStroke);
+        canvas.addEventListener('pointercancel', endStroke);
+        $('sigClear').addEventListener('click', () => { sizeCanvas(); render(); });
+        document.querySelectorAll('input[name="sig"]').forEach(r => r.addEventListener('change', () => {
+            $('sigDraw').hidden = radio('sig') !== 'draw';
+            if (radio('sig') === 'draw') sizeCanvas();
+        }));
+
+        /* ---------- Actions ---------- */
+        function toast(msg) {
+            const t = $('toast');
+            t.textContent = msg;
+            t.classList.add('show');
+            clearTimeout(toast.timer);
+            toast.timer = setTimeout(() => t.classList.remove('show'), 2400);
+        }
+
+        $('copyBtn').addEventListener('click', () => {
+            const text = plainText();
+            const fallback = () => {
+                const ta = document.createElement('textarea');
+                ta.value = text;
+                document.body.appendChild(ta);
+                ta.select();
+                document.execCommand('copy');
+                ta.remove();
+                toast('Letter copied');
+            };
+            if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(text).then(() => toast('Letter copied'), fallback);
+            else fallback();
+        });
+
+        $('txtBtn').addEventListener('click', () => {
+            const url = URL.createObjectURL(new Blob([plainText()], { type: 'text/plain;charset=utf-8' }));
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `parking-appeal-${(val('pcn') || 'letter').replace(/[^A-Za-z0-9_-]/g, '')}.txt`;
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+            URL.revokeObjectURL(url);
+        });
+
+        $('printBtn').addEventListener('click', () => window.print());
+
+        $('editBtn').addEventListener('click', () => {
+            editing = !editing;
+            const body = $('letterBody');
+            body.contentEditable = editing ? 'true' : 'false';
+            $('editBtn').textContent = editing ? 'Use form answers' : 'Edit text';
+            $('editBtn').setAttribute('aria-pressed', String(editing));
+            render();
+            if (editing) body.focus();
+        });
+        $('letterBody').addEventListener('input', renderStatus);
+
+        $('exampleBtn').addEventListener('click', () => {
+            const iso = offset => { const d = new Date(); d.setDate(d.getDate() + offset); return localIso(d); };
+            $('name').value = 'Alex Taylor';
+            $('vrm').value = 'AB12 CDE';
+            $('address').value = '42 High Street\nBirmingham\nB1 1AA';
+            $('operator').value = 'ParkingEye Ltd';
+            $('pcn').value = 'PE9823410';
+            $('location').value = 'St Peters Retail Park, Birmingham';
+            $('parkDate').value = iso(-12);
+            $('noticeDate').value = iso(-5);
+            $('endTime').value = '14:00';
+            $('exitTime').value = '14:07';
+            render();
+            toast('Example details added');
+        });
+
+        $('appealForm').addEventListener('input', render);
+        $('appealForm').addEventListener('change', render);
+        window.addEventListener('resize', () => { if (radio('sig') === 'draw' && !sigDataUrl) sizeCanvas(); });
+
+        if (COURT_PACK_URL) {
+            $('courtPackLink').href = COURT_PACK_URL;
+            $('courtPack').hidden = false;
+        }
+
+        render();
+    </script>
+</body>
+</html>
