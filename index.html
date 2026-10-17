@@ -659,7 +659,30 @@
         const ph = (value, label) => value || `[${label}]`;
         const fmtDate = iso => iso ? new Date(iso + 'T00:00:00').toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }) : '';
         const localIso = d => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
-        const daysBetween = (a, b) => Math.round((new Date(b + 'T00:00:00') - new Date(a + 'T00:00:00')) / 86400000);
+        const utcDay = iso => { const [y, m, d] = iso.split('-').map(Number); return Date.UTC(y, m - 1, d); };
+        const daysBetween = (a, b) => (utcDay(b) - utcDay(a)) / 86400000;
+        const isoFromUtc = ms => new Date(ms).toISOString().slice(0, 10);
+        // Second working day after a date, counting Monday to Friday only (bank holidays are not known to the page).
+        const secondWorkingDayAfter = iso => {
+            let ms = utcDay(iso), n = 0;
+            while (n < 2) { ms += 86400000; const wd = new Date(ms).getUTCDay(); if (wd !== 0 && wd !== 6) n++; }
+            return isoFromUtc(ms);
+        };
+
+        /* One place that decides whether the late-notice ground is supported by the dates entered.
+           The helper text, the warning and the letter all read this, so they cannot disagree.
+           Schedule 4, paragraph 9: the notice must be given within 14 days beginning with the day after parking.
+           Paragraph 9(6): a posted notice is presumed delivered on the second working day after posting.
+           The page only knows the date printed on the notice, so it treats that as the earliest possible posting date. */
+        function keeperFacts() {
+            const park = $('parkDate').value, notice = $('noticeDate').value, received = $('receivedDate').value;
+            const f = { park, notice, received, gapReceived: null, presumed: null, gapPresumed: null };
+            if (park && received) f.gapReceived = daysBetween(park, received);
+            if (park && notice) { f.presumed = secondWorkingDayAfter(notice); f.gapPresumed = daysBetween(park, f.presumed); }
+            if (f.gapPresumed !== null) f.verdict = f.gapPresumed > 14 ? 'late' : (f.gapReceived !== null && f.gapReceived > 14 ? 'receivedLateOnly' : 'notLate');
+            else f.verdict = f.gapReceived === null ? 'unknown' : (f.gapReceived > 14 ? 'needNoticeDate' : 'notLate');
+            return f;
+        }
 
         let editing = false;
         let sigDataUrl = '';
@@ -708,11 +731,16 @@
                     ] });
                 }
             } else if (ground === 'keeper' && isEW) {
-                const received = ph(fmtDate($('receivedDate').value), 'DATE RECEIVED');
-                blocks.push({ h: 'Ground of appeal: no keeper liability', p: [
-                    `No notice was left on the vehicle, so paragraph 9 of Schedule 4 to the Protection of Freedoms Act 2012 applies. Paragraphs 9(4) and 9(5) require the Notice to Keeper to be delivered within the relevant period of 14 days beginning with the day after the parking period ended.`,
-                    `The parking event was on ${parkDate}. Your notice is dated ${noticeDate} and I received it on ${received}, which is outside that period. Because the conditions in paragraph 6 of Schedule 4 have not been met, you have no right under paragraph 4 to recover the charge from me as keeper. Please cancel the charge.`
-                ] });
+                const k = keeperFacts();
+                const received = ph(fmtDate(k.received), 'DATE RECEIVED');
+                const intro = `No notice was left on the vehicle, so paragraph 9 of Schedule 4 to the Protection of Freedoms Act 2012 applies. Paragraphs 9(4) and 9(5) require the Notice to Keeper to be given within the relevant period of 14 days beginning with the day after the parking period ended. Under paragraph 9(6), a notice sent by post is presumed to have been given on the second working day after the day it was posted.`;
+                const tail = 'Because the conditions in paragraph 6 of Schedule 4 have not been met, you have no right under paragraph 4 to recover the charge from me as keeper. Please cancel the charge.';
+                let facts;
+                if (k.verdict === 'late') facts = `The parking event was on ${parkDate}. Your notice is dated ${noticeDate}. Even if it was posted on that date, it is presumed to have been given on ${fmtDate(k.presumed)}, which is outside that period. I received it on ${received}. Please provide proof of the date it was posted. ${tail}`;
+                else if (k.verdict === 'receivedLateOnly') facts = `The parking event was on ${parkDate}. Your notice is dated ${noticeDate} and I received it on ${received}, which is outside that period. [CHECK: IF THE NOTICE WAS POSTED ON THE DATE IT SHOWS, THE LAW PRESUMES IT ARRIVED ON ${fmtDate(k.presumed).toUpperCase()}, WHICH IS WITHIN 14 DAYS. KEEP THIS GROUND ONLY IF YOU CAN SHOW WHEN IT REALLY ARRIVED, OR CHOOSE ANOTHER GROUND] Please provide proof of the date it was posted. ${tail}`;
+                else if (k.verdict === 'notLate') facts = `The parking event was on ${parkDate}. Your notice is dated ${noticeDate} and I received it on ${received}. [THESE DATES DO NOT SHOW A LATE NOTICE. CHOOSE ANOTHER GROUND]`;
+                else facts = `The parking event was on ${parkDate}. Your notice is dated ${noticeDate} and I received it on ${received}, which is outside that period. ${tail}`;
+                blocks.push({ h: 'Ground of appeal: no keeper liability', p: [intro, facts] });
             } else if (ground === 'keeper') {
                 blocks.push({ h: `Ground of appeal: no keeper liability in ${jurisdiction}`, p: [
                     `The parking event took place in ${jurisdiction}. Schedule 4 of the Protection of Freedoms Act 2012 applies only in England and Wales, and no equivalent keeper liability is in force in ${jurisdiction}. You can therefore pursue only the driver, and you have not shown who the driver was. I am the registered keeper and I am not obliged to tell you. Please cancel the charge.`
@@ -859,8 +887,11 @@
             const left = $('letter').querySelectorAll('mark').length;
             if (editing) add('info', '<strong>Editing.</strong> The letter body will not update from the form until you choose "Use form answers".');
             if (left) add('', `<strong>${left} item${left === 1 ? '' : 's'} still to fill in.</strong> Replace everything highlighted in [SQUARE BRACKETS] before sending.`);
-            const pd = $('parkDate').value, rd = $('receivedDate').value;
-            if (radio('ground') === 'keeper' && $('jurisdiction').value === 'EW' && pd && rd && daysBetween(pd, rd) <= 14) add('', '<strong>Check your dates.</strong> This letter says the notice arrived more than 14 days after parking, but the dates you entered are within 14 days. Correct the dates or choose a different ground. Do not send a statement that is not true.');
+            if (radio('ground') === 'keeper' && $('jurisdiction').value === 'EW') {
+                const k = keeperFacts();
+                if (k.verdict === 'notLate') add('', '<strong>Check your dates.</strong> The dates you entered do not show a late notice. Correct them or choose a different ground. Do not send a statement that is not true.');
+                if (k.verdict === 'receivedLateOnly') add('', '<strong>Weak ground.</strong> You received the notice late, but if it was posted on the date it shows, the law presumes it arrived within 14 days. Keep this ground only if you can show when it really arrived.');
+            }
         }
 
         /* ---------- Form state that depends on other answers ---------- */
@@ -903,15 +934,15 @@
             }
 
             const calc = $('keeperCalc');
-            const pd = $('parkDate').value, rd = $('receivedDate').value;
-            if (pd && rd) {
-                const n = daysBetween(pd, rd);
-                calc.textContent = n > 14
-                    ? `You received it ${n} days after the parking date, which is more than 14.`
-                    : `You received it ${n} days after the parking date. This ground needs more than 14 days, so it may not apply.`;
-            } else {
-                calc.textContent = 'Add the date of parking in step 1 to see the gap.';
-            }
+            const k = keeperFacts();
+            const parts = [];
+            if (k.gapReceived !== null) parts.push(`You received it ${k.gapReceived} days after parking.`);
+            if (k.gapPresumed !== null) parts.push(`If it was posted on the date it shows, it counts as delivered on ${fmtDate(k.presumed)}, ${k.gapPresumed} days after parking (second working day after posting; bank holidays are not counted here).`);
+            if (k.verdict === 'late') parts.push('That is more than 14, so this ground fits.');
+            else if (k.verdict === 'receivedLateOnly') parts.push('Only your received date is over 14 days, so this ground is weak.');
+            else if (k.verdict === 'notLate') parts.push('That is within 14 days, so this ground does not fit.');
+            else if (k.verdict === 'needNoticeDate') parts.push('Add the date printed on the notice in step 1 so the page can check the posting rule too.');
+            calc.textContent = parts.length ? parts.join(' ') : 'Add the date of parking and the date on the notice in step 1, and the date you received it here.';
         }
 
         /* ---------- Steps ---------- */
